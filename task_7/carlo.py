@@ -4,14 +4,14 @@ import numpy as np
 import pandas as pd
 
 def roll_dice(num_rolls):
-    sums = {i: 0 for i in range(2, 13)}  # Ініціалізуємо словник для підрахунку сум
+    sums = {i: 0 for i in range(2, 13)}  
     for _ in range(num_rolls):
         die1 = random.randint(1, 6)
         die2 = random.randint(1, 6)
         total = die1 + die2
-        sums[total] += 1  # Збільшуємо лічильник для отриманої суми
+        sums[total] += 1  
 
-    probabilities = {k: v / num_rolls for k, v in sums.items()}  # Обчислюємо ймовірності
+    probabilities = {k: v / num_rolls for k, v in sums.items()} 
     return sums, probabilities
 
 def plot_probabilities(probabilities):

@@ -11,7 +11,7 @@ class Node:
         self.id = str(uuid.uuid4())
 
 def add_edges(graph, node, pos, x=0, y=0, layer=1):
-    """Recursively add edges and nodes to the graph."""
+   
     if node is not None:
         graph.add_node(node.id, color=node.color, label=node.val)
         if node.left:
@@ -27,7 +27,7 @@ def add_edges(graph, node, pos, x=0, y=0, layer=1):
     return graph
 
 def draw_heap(heap_root):
-    """Draw the binary heap using NetworkX and Matplotlib."""
+    
     heap = nx.DiGraph()
     pos = {heap_root.id: (0, 0)}
     heap = add_edges(heap, heap_root, pos)
@@ -41,9 +41,9 @@ def draw_heap(heap_root):
     plt.show()
 
 def build_heap_tree(heap_values):
-    """Create a binary heap from the provided values."""
+
     def create_heap_tree(index):
-        """Recursive helper to build the tree structure from a heap list."""
+    
         if index >= len(heap_values):
             return None
         node = Node(heap_values[index])
